@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Xevion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9; /* Warna latar belakang hijau muda */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            background-color: #a5d6a7; /* Warna header hijau */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #388e3c; /* Warna judul hijau gelap */
+        }
+
+        main {
+            margin-top: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #ffffff; /* Warna latar belakang putih untuk setiap section */
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #388e3c; /* Warna judul section hijau gelap */
+        }
+
+        blockquote {
+            font-style: italic;
+            font-size: 1.5em;
+            margin: 20px 0;
+            padding: 10px;
+            border-left: 5px solid #388e3c; /* Warna garis hijau gelap */
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .image-container img {
+            width: 30%;
+            border-radius: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            border: 1px solid #388e3c;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #388e3c; /* Warna tombol hijau gelap */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #2e7d32; /* Warna tombol saat hover */
+        }
+
+        #message-display {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #388e3c;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang, Xevion!</h1>
+        <p>Ini adalah tempat spesial untukmu.</p>
+    </header>
+    
+    <main>
+        <section id="motivational-quotes">
+            <h2>Kata-kata Penyemangat</h2>
+            <blockquote id="quote"></blockquote>
+            <button onclick="newQuote()">Dapatkan Kata Penyemangat Baru</button>
+        </section>
+
+        <section id="gallery">
+            <h2>Kenangan Kita</h2>
+            <div class="image-container">
+                <img src="Pic1.jpg" alt="Kenangan 1">
+                <img src="Pic2.jpg" alt="Kenangan 2">
+                <img src="Pic3.jpg" alt="Kenangan 3">
+            </div>
+        </section>
+
+        <section id="personal-message">
+            <h2>Pesan Pribadi untuk Xevion</h2>
+            <textarea id="message-input" placeholder="Tulis pesan untuk Xevion..."></textarea>
+            <button onclick="sendMessage()">Kirim Pesan</button>
+            <div id="message-display"></div>
+        </section>
+
+        <section id="music">
+            <h2>Lagu Favorit</h2>
+            <audio id="audio-player" controls>
+                <source src="Aud1.M4a" type="audio/mpeg">
+                Browser Anda tidak mendukung elemen audio.
+            </audio>
+            <button onclick="playMusic()"> Putar Lagu</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Untuk Xevion. Semua hak dilindungi.</p>
+    </footer>
+
+    <script>
+        const quotes = [
+            "Kamu adalah pencipta jalanmu sendiri.",
+            "Setiap hari adalah kesempatan baru untuk menjadi lebih baik.",
+            "Jangan pernah menyerah pada impianmu.",
+            "Kamu lebih kuat dari yang kamu kira.",
+            "Percayalah pada dirimu sendiri dan semua yang kamu bisa capai."
+        ];
+
+        function newQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote').innerText = quotes[randomIndex];
+        }
+
+        function sendMessage() {
+            const message = document.getElementById('message-input').value;
+            document.getElementById('message-display').innerText = `Pesan untuk Xevion: ${message}`;
+            document.getElementById('message-input').value = ''; // Clear the input
+        }
+
+        function playMusic() {
+            const audioPlayer = document.getElementById('audio-player');
+            audioPlayer.play();
+        }
+    </script>
+</body>
+</html>
